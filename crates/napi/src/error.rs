@@ -236,7 +236,6 @@ impl<S: AsRef<str> + std::fmt::Debug> fmt::Display for Error<S> {
 }
 
 impl<S: AsRef<str>> Error<S> {
-  #[cold]
   #[inline(never)]
   pub fn new<R: ToString>(status: S, reason: R) -> Self {
     Error {
